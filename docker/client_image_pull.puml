@@ -1,0 +1,20 @@
+@startdot
+digraph docker_pull {
+  node [shape=box]
+  node1 [label = "api/client/image\n NewPullCommand"]
+  node2 [label = "api/client/image\n runPull"]
+  node3 [label = "api/client\n (*DockerCli) TrustedPull"]
+  node4 [label = "api/client\n (*DockerCli) ImagePullPrivileged"]
+  node5 [label = "docker/engine-api/client\n (*Client) ImagePull", style="filled", fillcolor=yellow]
+  node6 [label = "POST /images/create", style="dashed"]
+
+  node40 [label = "api/client\n (*DockerCli).getNotaryRepository"]
+
+
+  node1 -> node2 [style=dotted]
+  node2 -> node3
+  node3 -> node40
+  node40 -> node4 -> node5 -> node6
+
+}
+@enddot

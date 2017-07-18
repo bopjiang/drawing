@@ -1,0 +1,18 @@
+@startdot
+digraph docker_pull {
+  node [shape=box]
+  node00 [label = "cmd/docker\n main"]
+  node01 [label = "cli/cobraadaptor\n NewCobraAdaptor"]
+  node1 [label = "api/client/container\n NewRunCommand"]
+  node2 [label = "api/client/container\n runRun"]
+  node5 [label = "docker/engine-api/client\n (*Client) ContainerStart", style="filled", fillcolor=yellow]
+  node6 [label = "POST /containers/$containerID/start", style="dashed"]
+
+  node40 [label = "api/client\n (*DockerCli).getNotaryRepository"]
+
+  node00 -> node01 -> node1
+  node1 -> node2 [style=dotted]
+  node2 -> node5 -> node6
+
+}
+@enddot
