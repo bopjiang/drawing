@@ -1,58 +1,38 @@
 /* ref: https://graphviz.org/Gallery/directed/unix.html */
 
 /* courtesy Ian Darwin and Geoff Collyer, Softquad Inc. */
-digraph unix {
+digraph MySQL {
 	fontname="Helvetica,Arial,sans-serif"
 	node [fontname="Helvetica,Arial,sans-serif"]
 	edge [fontname="Helvetica,Arial,sans-serif"]
 	node [color=lightblue2, style=filled];
-	"5th Edition" -> "6th Edition";
-	"5th Edition" -> "PWB 1.0";
-	"6th Edition" -> "LSX";
-	"6th Edition" -> "1 BSD";
-	"6th Edition" -> "Mini Unix";
-	"6th Edition" -> "Wollongong";
-	"6th Edition" -> "Interdata";
-	"Interdata" -> "Unix/TS 3.0";
-	"Interdata" -> "PWB 2.0";
-	"Interdata" -> "7th Edition";
-	"7th Edition" -> "8th Edition";
-	"7th Edition" -> "32V";
-	"7th Edition" -> "V7M";
-	"7th Edition" -> "Ultrix-11";
-	"7th Edition" -> "Xenix";
-	"7th Edition" -> "UniPlus+";
-	"V7M" -> "Ultrix-11";
-	"8th Edition" -> "9th Edition";
-	"1 BSD" -> "2 BSD";
-	"2 BSD" -> "2.8 BSD";
-	"2.8 BSD" -> "Ultrix-11";
-	"2.8 BSD" -> "2.9 BSD";
-	"32V" -> "3 BSD";
-	"3 BSD" -> "4 BSD";
-	"4 BSD" -> "4.1 BSD";
-	"4.1 BSD" -> "4.2 BSD";
-	"4.1 BSD" -> "2.8 BSD";
-	"4.1 BSD" -> "8th Edition";
-	"4.2 BSD" -> "4.3 BSD";
-	"4.2 BSD" -> "Ultrix-32";
-	"PWB 1.0" -> "PWB 1.2";
-	"PWB 1.0" -> "USG 1.0";
-	"PWB 1.2" -> "PWB 2.0";
-	"USG 1.0" -> "CB Unix 1";
-	"USG 1.0" -> "USG 2.0";
-	"CB Unix 1" -> "CB Unix 2";
-	"CB Unix 2" -> "CB Unix 3";
-	"CB Unix 3" -> "Unix/TS++";
-	"CB Unix 3" -> "PDP-11 Sys V";
-	"USG 2.0" -> "USG 3.0";
-	"USG 3.0" -> "Unix/TS 3.0";
-	"PWB 2.0" -> "Unix/TS 3.0";
-	"Unix/TS 1.0" -> "Unix/TS 3.0";
-	"Unix/TS 3.0" -> "TS 4.0";
-	"Unix/TS++" -> "TS 4.0";
-	"CB Unix 3" -> "TS 4.0";
-	"TS 4.0" -> "System V.0";
-	"System V.0" -> "System V.2";
-	"System V.2" -> "System V.3";
+	"mSQL" -> "MySQL";
+	"MySQL" -> "MySQL 3.1";
+	"MySQL 3.1" -> "MySQL 3.21";
+	"InnoDB" -> "MySQL 3.23";
+	"MySQL 3.21" -> "MySQL 3.23";
+	"MySQL 3.23" -> "MySQL 4";
+	"MySQL 4" -> "MySQL 4.1";
+	"MySQL 4.1" -> "MySQL 5";
+	"MySQL 5" -> "MySQL 5.6";
+	"MySQL 5.6" -> "MySQL 5.7";
+	"MySQL 5.7" -> "MySQL 8.0";
+	"MySQL 8.0" -> "MySQL 8.4";
+	"MySQL 8.4" -> "MySQL 9.0";
+	"MySQL 9.0" -> "MySQL 9.1";
+
+	"MySQL 5" -> "AWS RDS MySQL 5.1";
+	"AWS RDS MySQL 5.1" -> "AWS RDS MySQL 5.6";
+	"AWS RDS MySQL 5.6" -> "AWS RDS MySQL 5.7";
+	"AWS RDS MySQL 5.7" -> "AWS RDS MySQL 8.0";
+
+	"MySQL 5.6"  -> "AWS Aurora MySQL 1.*";
+	"AWS Aurora MySQL 1.*"-> "AWS Aurora MySQL 2.* (MySQL 5.7 compatiablle)";
+	"AWS Aurora MySQL 2.* (MySQL 5.7 compatiablle)" -> "AWS Aurora MySQL 3.* (MySQL 8.0 compatiablle)";
+
+	"MySQL 5" -> "MariaDB 5.5";
+	"MariaDB 5.5" -> "MariaDB 10";
+	"MariaDB 10" -> "MariaDB 11";
 }
+
+
