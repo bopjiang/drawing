@@ -12,16 +12,17 @@ digraph MySQL {
 	"InnoDB" -> "MySQL 3.23";
 	"MySQL 3.21" -> "MySQL 3.23";
 	"MySQL 3.23" -> "MySQL 4";
-	"MySQL 4" -> "MySQL 4.1";
-	"MySQL 4.1" -> "MySQL 5";
-	"MySQL 5" -> "MySQL 5.6";
+	"MySQL 4" -> "MySQL 5";
+	"MySQL 5" -> "MySQL 5.1";
+	"MySQL 5.1" -> "MySQL 5.5";
+	"MySQL 5.5" -> "MySQL 5.6";
 	"MySQL 5.6" -> "MySQL 5.7";
 	"MySQL 5.7" -> "MySQL 8.0";
 	"MySQL 8.0" -> "MySQL 8.4";
 	"MySQL 8.4" -> "MySQL 9.0";
 	"MySQL 9.0" -> "MySQL 9.1";
 
-	"MySQL 5" -> "AWS RDS MySQL 5.1";
+	"MySQL 5.1" -> "AWS RDS MySQL 5.1";
 	"AWS RDS MySQL 5.1" -> "AWS RDS MySQL 5.6";
 	"AWS RDS MySQL 5.6" -> "AWS RDS MySQL 5.7";
 	"AWS RDS MySQL 5.7" -> "AWS RDS MySQL 8.0";
